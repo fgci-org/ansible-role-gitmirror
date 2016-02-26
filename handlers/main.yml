@@ -1,2 +1,17 @@
 ---
 # handlers file for ansible-role-gitmirror
+
+- name: restart gitmirror
+  service: name=gitmirror state=restarted
+
+- name: Unpack archive
+  unarchive: src=/var/tmp/gitmirror.tar.gz copy=no dest=/tmp
+  notify: Copy binary
+
+- name: Copy binary
+  command: cp /tmp/{{  gitmirror_archive_binpath }} {{ gitmirror_binpath }}.tmp
+  notify: Rename tmp binary
+
+- name: Rename tmp binary
+  command: mv {{ gitmirror_binpath }}.tmp {{ gitmirror_binpath }}
+  notify: restart gitmirror

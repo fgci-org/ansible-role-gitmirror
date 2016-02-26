@@ -1,0 +1,9 @@
+BasePath = "{{ gitmirror_basepath }}"
+{% for repo in gitmirror_repos %}
+
+[[Repo]]
+Origin = "{{ repo.origin }}"
+{% if repo.name is defined %}
+Name = "{{ repo.name }}"
+{% endif %}
+{% endfor %}

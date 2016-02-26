@@ -1,0 +1,26 @@
+---
+# Tasks for EL7
+
+# Note that this does NOT download the file if it already
+# exists. Thus, if updating to a newer version
+# (i.e. gitmirror_download_url changes) please remove the destination
+# first to force ansible to download the archive.
+- name: Download git-mirror
+  get_url: url={{ gitmirror_download_url }} dest=/var/tmp/gitmirror.tar.gz
+  notify: Unpack archive
+
+- name: Create a systemd unit
+  template: src=gitmirror.service.j2 dest=/etc/systemd/system/gitmirror.service owner=root group=root mode=0644
+
+- name: Generate config file
+  template: src=gitmirror.toml.j2 dest={{ gitmirror_config }} owner=root group=root mode=0644
+  notify: restart gitmirror
+
+- name: Create group for the gitmirror daemon
+  group: name=gitmirror system=yes
+
+- name: Create user for the gitmirror daemon
+  user: name=gitmirror home={{ gitmirror_basepath }} system=yes group=gitmirror
+
+- name: Enable and start the service
+  service: name=gitmirror enabled=yes state=started

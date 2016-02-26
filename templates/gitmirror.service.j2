@@ -1,0 +1,9 @@
+[Unit]
+Description=Git mirror daemon
+
+[Service]
+User=gitmirror
+ExecStart={{ gitmirror_binpath }} {{ gitmirror_config }}
+
+[Install]
+WantedBy=multi-user.target
