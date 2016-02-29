@@ -54,9 +54,9 @@ playbook like
 and then somewhere in your group_vars:
 
     gitmirror_repos:
-	- origin: https://github.com/jabl/ansible-role-gitmirror.git
-	- origin: https://example.com/foo/bar.git
-	  name: "bar2.git"
+        - origin: https://github.com/jabl/ansible-role-gitmirror.git
+        - origin: https://example.com/foo/bar.git
+          name: "bar2.git"
 
 License
 -------
