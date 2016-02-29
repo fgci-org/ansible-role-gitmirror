@@ -6,7 +6,7 @@
 # (i.e. gitmirror_download_url changes) please remove the destination
 # first to force ansible to download the archive.
 - name: Download git-mirror
-  get_url: url={{ gitmirror_download_url }} dest=/var/tmp/gitmirror.tar.gz
+  get_url: url={{ gitmirror_download_url }} dest=/var/tmp/{{ gitmirror_download_url | basename }}
   notify: Unpack archive
 
 - name: Create a systemd unit

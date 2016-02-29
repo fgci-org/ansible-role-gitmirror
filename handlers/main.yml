@@ -5,7 +5,7 @@
   service: name=gitmirror state=restarted
 
 - name: Unpack archive
-  unarchive: src=/var/tmp/gitmirror.tar.gz copy=no dest=/tmp
+  unarchive: src=/var/tmp/{{ gitmirror_download_url | basename }} copy=no dest=/tmp
   notify: Copy binary
 
 - name: Copy binary
