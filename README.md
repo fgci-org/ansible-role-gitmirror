@@ -27,6 +27,10 @@ Default variables (that can be overriden with group_vars etc.):
 - gitmirror_basepath: The directory where the mirrored repositories
   will be stored. Also the home directory of the gitmirror user.
 
+- gitmirror_generate_config: Whether to generate the config
+  file. Disabling this can be useful if you have some other mechanism
+  to generate the config file instead.
+
 - gitmirror_config: Path of the git-mirror config file.
 
 - gitmirror_repos: List of maps containing repositories to

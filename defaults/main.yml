@@ -5,6 +5,7 @@ gitmirror_download_url: https://github.com/beefsack/git-mirror/releases/download
 gitmirror_archive_binpath: git-mirror_0.1.0_linux_amd64/git-mirror
 gitmirror_binpath: /usr/local/sbin/git-mirror
 gitmirror_basepath: /var/local/gitmirror
+gitmirror_generate_config: True
 gitmirror_config: /etc/gitmirror.toml
 
 # Repos to mirror are configured with here. You almost certainly want
