@@ -1,4 +1,4 @@
 ---
 # tasks file for ansible-role-gitmirror
-- include: redhat.yml
+- include_tasks: redhat.yml
   when: ansible_os_family == "RedHat" and ansible_distribution_major_version == "7"

@@ -13,27 +13,27 @@ to work on any Linux distro that uses systemd.
 Role Variables
 --------------
 
-Default variables (that can be overriden with group_vars etc.):
+Default variables (that can be overriden with group\_vars etc.):
 
-- gitmirror_download_url; The URL where to download the binary
-  distribution. The default is version 0.1.0 for Linux x86_64.  
+- gitmirror\_download\_url; The URL where to download the binary
+  distribution. The default is version 0.1.0 for Linux x86\_64.  
 
-- gitmirror_archive_binpath; The path of the git-mirror binary inside
+- gitmirror\_archive\_binpath; The path of the git-mirror binary inside
   the archive file.
 
-- gitmirror_binpath: The path where the git-mirror binary will be
+- gitmirror\_binpath: The path where the git-mirror binary will be
   installed.
 
-- gitmirror_basepath: The directory where the mirrored repositories
+- gitmirror\_basepath: The directory where the mirrored repositories
   will be stored. Also the home directory of the gitmirror user.
 
-- gitmirror_generate_config: Whether to generate the config
+- gitmirror\_generate\_config: Whether to generate the config
   file. Disabling this can be useful if you have some other mechanism
   to generate the config file instead.
 
-- gitmirror_config: Path of the git-mirror config file.
+- gitmirror\_config: Path of the git-mirror config file.
 
-- gitmirror_repos: List of maps containing repositories to
+- gitmirror\_repos: List of maps containing repositories to
   mirror. Each repository must have at least a key "origin" which
   describes the URL of the repo to mirror. If present, the "name" key
   will mirror the repository under that name.
@@ -48,16 +48,16 @@ Example Playbook
 ----------------
 
 The default parameters should mostly be Ok, with the exception of the
-gitmirror_repos variable which you probably want to override. E.g. a
+gitmirror\_repos variable which you probably want to override. E.g. a
 playbook like
 
     - hosts: servers
       roles:
          - { role: ansible-role-gitmirror, tags: [ 'gitmirror' ] }
 
-and then somewhere in your group_vars:
+and then somewhere in your group\_vars:
 
-    gitmirror_repos:
+    gitmirror\_repos:
         - origin: https://github.com/jabl/ansible-role-gitmirror.git
         - origin: https://example.com/foo/bar.git
           name: "bar2.git"
