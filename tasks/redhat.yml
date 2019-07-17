@@ -15,7 +15,7 @@
 - name: Generate config file
   template: src=gitmirror.toml.j2 dest={{ gitmirror_config }} owner=root group=root mode=0644
   notify: restart gitmirror
-  when: gitmirror_generate_config
+  when: gitmirror_generate_config|bool
 
 - name: Create group for the gitmirror daemon
   group: name=gitmirror system=yes
