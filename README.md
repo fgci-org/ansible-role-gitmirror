@@ -65,7 +65,7 @@ and then somewhere in your group\_vars:
 License
 -------
 
-MPL-2.0
+MIT
 
 Author Information
 ------------------

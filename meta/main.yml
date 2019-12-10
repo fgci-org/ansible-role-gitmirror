@@ -3,7 +3,7 @@ galaxy_info:
   author: Janne Blomqvist
   description: 
   company: Aalto University
-  license: MPL-2.0
+  license: MIT
   min_ansible_version: 2.4
   #
   # Below are all platforms currently available. Just uncomment
