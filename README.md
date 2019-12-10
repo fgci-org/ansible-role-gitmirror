@@ -58,7 +58,7 @@ playbook like
 and then somewhere in your group\_vars:
 
     gitmirror\_repos:
-        - origin: https://github.com/jabl/ansible-role-gitmirror.git
+        - origin: https://github.com/fgci-org/ansible-role-gitmirror.git
         - origin: https://example.com/foo/bar.git
           name: "bar2.git"
 

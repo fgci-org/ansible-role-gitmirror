@@ -11,5 +11,5 @@ gitmirror_config: /etc/gitmirror.toml
 # Repos to mirror are configured with here. You almost certainly want
 # to override this.
 gitmirror_repos:
-  - origin: https://github.com/jabl/ansible-role-gitmirror.git
+  - origin: https://github.com/fgci-org/ansible-role-gitmirror.git
     name: "local-name-for-gitmirror"
